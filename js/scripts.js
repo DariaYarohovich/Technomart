@@ -1,0 +1,1 @@
+var popup = document.querySelector(".popup");
