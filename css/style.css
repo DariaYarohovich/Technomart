@@ -40,6 +40,7 @@ h2{
     padding: 14px 57px;
     border-radius: 4px;
     background-color: #ee3643;
+    transition: background-color 0.3s ease-in-out;
 }
 .btn:hover{
     background-color: #ca2c37;
@@ -69,6 +70,8 @@ h2{
     margin: 0;
     background-color: #ee3643;
     box-shadow: 0 5px 0 0 #b52933;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 .top .name{
     height: 64px;
@@ -125,6 +128,7 @@ input[type="search"]:focus{
     color: #fff;
     font-size: 17px;
     line-height: 17px;
+    transition: all 0.3s ease-in-out;
 }
 .user-menu a:first-child,
 .user-menu a:nth-child(2){
@@ -225,6 +229,7 @@ input[type="search"]:focus{
     color: #000;
     background-color: #fff;
     padding: 12px 25px;
+    transition: all 0.3s ease-in-out;
 }
 .user-block .login{
     padding-left: 49px;
@@ -269,6 +274,7 @@ input[type="search"]:focus{
     background-repeat: no-repeat;
     background-position: 15px 16px;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 .user-name:hover{
     background-image: url("../img/icon-user.png");
@@ -342,6 +348,7 @@ input[type="search"]:focus{
     line-height: 17px;
     text-decoration: none;
     color: #fff;
+    transition: all 0.3s ease-in-out;
 }
 .menu a:first-child{
     padding-left: 37px;
@@ -401,6 +408,7 @@ input[type="search"]:focus{
     text-align: center;
     color: #fff;
     text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
 }
 .btn-group:hover{
     background-color: rgba(0, 0, 0, 0.2);
@@ -491,8 +499,10 @@ input[type="search"]:focus{
 }
 .slide .btn{
     position: absolute;
+    z-index: 2;
     left: 25px;
     bottom: 22px;
+    cursor: pointer;
 }
 .slide{
     position: relative;
@@ -528,12 +538,19 @@ input[type="search"]:focus{
 .slide-1{
     height: 266px;
     background-image: url("../img/slide_1.png");
-    display: none;
+    opacity: 0;
+    /*display: none;*/
+    transition: opacity 0.5s ease-in-out;
+    
 }
 .slide-2{
+    position: absolute;
+    top: 0;
     height: 266px;
     background-image: url("../img/slide_2.png");
-    display: none;
+    opacity: 0;
+    /*display: none;*/
+    transition: opacity 0.5s ease-in-out;
 }
 .slider-controls{
     position: absolute;
@@ -564,7 +581,8 @@ input[type="search"]:focus{
 }
 #btn-1:checked ~ #slide-1,
 #btn-2:checked ~ #slide-2{
-    display: block;
+    opacity: 1;
+    /*display: block;*/
 }
 
 /*=========SECTIONS=========*/
@@ -604,6 +622,7 @@ input[type="search"]:focus{
     padding-top:35px;
     text-align: center;
     overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out;
 }
 .item-img{
     position: relative;
@@ -620,7 +639,8 @@ input[type="search"]:focus{
     height: 110px;
     width: 190px;
     background-color: #fff;
-    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 .buy{
     padding: 14px 44px;
@@ -661,7 +681,7 @@ input[type="search"]:focus{
     box-shadow: 0px 9px 40px -10px;
 }
 .product-item:hover .buttons{
-    display: block;
+    opacity: 1;
 }
 .product-name{
     display: block;
@@ -1098,6 +1118,7 @@ input[type="search"]:focus{
     border: 1px solid #e5e5e5;
     margin-right: 20px;
     margin-bottom: 20px;
+    transition: box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
 }
 .producer img{
     vertical-align: middle;
@@ -1107,7 +1128,7 @@ input[type="search"]:focus{
 }
 .producer:hover{
     box-shadow: 0px 9px 40px -10px;
-    border: none;
+    border-color: transparent;
 }
 .producer:active,
 .producer:focus{
@@ -1173,6 +1194,7 @@ input[type="search"]:focus{
     border-bottom: 1px solid #293449;
     border-top: 1px solid #405069;
     cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
 }
 .service-item:hover{
     background-color: #293449;
@@ -1183,9 +1205,13 @@ input[type="search"]:focus{
     border-top: none;
     border-bottom: none;
 }
-.services-desc{
+.service-content {
     position: relative;
-    float: left;
+}
+.services-desc{
+    position: absolute;
+    top: 0;
+    left: 300px;
     width: 315px;
 }
 .services-desc h2{
@@ -1211,10 +1237,12 @@ input[type="search"]:focus{
 .delivery,
 .guarantee,
 .credit{
-    display: none;
+    /*display: none;*/
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 .delivery{
-    display: none;
+    /*display: none;*/
 }
 .guarantee::after{
     content: "";
@@ -1257,7 +1285,8 @@ input[type="search"]:focus{
 #serv-1:checked ~ .delivery,
 #serv-2:checked ~ .guarantee,
 #serv-3:checked ~ .credit{
-    display: block;
+    /*display: block;*/
+    opacity: 1;
 }
 .service-content input[type="radio"]{
     display: none;
